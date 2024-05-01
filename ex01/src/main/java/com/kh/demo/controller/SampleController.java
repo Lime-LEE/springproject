@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kh.demo.dto.SampleDTO;
 
+import jakarta.servlet.http.HttpServletRequest;
+
 @Controller
 @RequestMapping("/sample/*")
 public class SampleController {
@@ -67,8 +69,10 @@ public class SampleController {
 		model.addAttribute("datas",datas);
 	}
 	
+	//세션 받기
 	@GetMapping("test05")
-	public void test05() {
+	public void test05(HttpServletRequest req) {
+		req.getSession();
 		String str = null;
 		str.charAt(10);
 	}
